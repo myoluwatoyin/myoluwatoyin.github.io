@@ -3,223 +3,1728 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Emmanuel Boluwatife | Portfolio CV</title>
+  <title>Emmanuel Boluwatife | Senior Full-Stack Architect</title>
   <link rel="stylesheet" href="style.css" />
-  <script defer src="script.js"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
 </head>
 <body>
+    <!-- Advanced Loading Screen -->
     <div id="preloader">
-        <div class="spinner"></div>
-      </div>      
+        <div class="loading-container">
+            <div class="code-loader">
+                <span class="typing-text"></span>
+                <span class="cursor">|</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-fill"></div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Particle Background -->
+    <canvas id="particle-canvas"></canvas>
     <div id="scroll-progress"></div>
-    <canvas id="stars"></canvas>
+    
+    <!-- Navigation -->
     <nav id="main-nav">
         <div class="nav-container">
-          <div class="logo">Emmanuel</div>
-      
-          <div class="hamburger" id="hamburger">
-            <span></span><span></span><span></span>
-          </div>
-      
-          <ul id="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#education">Education</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
+            <div class="logo">
+                <span class="logo-bracket">&lt;</span>
+                <span class="logo-name">Emmanuel</span>
+                <span class="logo-bracket">/&gt;</span>
+            </div>
+            
+            <div class="hamburger" id="hamburger">
+                <span></span><span></span><span></span>
+            </div>
+            
+            <ul id="nav-links">
+                <li><a href="#hero" data-text="Home">Home</a></li>
+                <li><a href="#about" data-text="About">About</a></li>
+                <li><a href="#expertise" data-text="Expertise">Expertise</a></li>
+                <li><a href="#projects" data-text="Projects">Projects</a></li>
+                <li><a href="#experience" data-text="Experience">Experience</a></li>
+                <li><a href="#contact" data-text="Contact">Contact</a></li>
+            </ul>
         </div>
-      </nav>
-      
-      
-  <div class="stars-bg"></div>
-  
-  <header>
-    <h1 class="fade-in">Emmanuel Boluwatife</h1>
-    <p class="fade-in delay-1">Senior Fullstack Developer</p>
-    <a href="mailto:myoluwatoyin@gmail.com" class="cta-button fade-in delay-2">Let's Work Together</a>
-  </header>
-
-  <section id="about" class="slide-in">
-    <h2>Summary</h2>
-    <p>
-      Results-driven Senior Fullstack Developer with over 10 years of hands-on experience delivering scalable web solutions across diverse industries. Expert in WordPress development, from custom themes and plugins to performance optimization and complex integrations. Skilled in both frontend and backend technologies including PHP, JavaScript (React, Vue), HTML5, CSS3, MySQL, and REST APIs. Proven track record in leading projects, collaborating with cross-functional teams, and translating business goals into robust digital experiences. Passionate about clean code, continuous learning, and creating user-centered web applications that drive results.
-    </p>
-  </section>
-  
-
-  <section id="skills" class="slide-in">
-    <h2>Skills</h2>
+    </nav>
     
-    <h4>Frontend</h4>
-    <ul>
-      <li>HTML5, CSS3, JavaScript (ES6+), React.js, Vue.js</li>
-      <li>jQuery, AJAX, Bootstrap, Tailwind CSS</li>
-    </ul>
-  
-    <h4>Backend</h4>
-    <ul>
-      <li>PHP, Node.js, REST APIs, GraphQL</li>
-      <li>MySQL, PostgreSQL, MongoDB</li>
-    </ul>
-  
-    <h4>WordPress Expertise</h4>
-    <ul>
-      <li>Custom Themes & Plugins, ACF, WooCommerce</li>
-      <li>REST API, Gutenberg Blocks, CPTs & Taxonomies</li>
-      <li>Security Hardening, Multisite Management</li>
-      <li>Timber/Twig, WordPress Hooks</li>
-    </ul>
-  
-    <h4>Tools & DevOps</h4>
-    <ul>
-      <li>Git, GitHub, GitLab, Bitbucket</li>
-      <li>Lando, Docker, Composer</li>
-      <li>Jira, Trello, Slack, Figma, Adobe XD</li>
-    </ul>
-  </section>
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+        <!-- Interactive Background Elements -->
+        <div class="hero-bg-effects">
+            <div class="floating-code-snippets">
+                <div class="code-snippet" data-lang="js">const magic = () => code;</div>
+                <div class="code-snippet" data-lang="css">.awesome { display: flex; }</div>
+                <div class="code-snippet" data-lang="react">useState(amazing)</div>
+                <div class="code-snippet" data-lang="node">app.listen(3000)</div>
+                <div class="code-snippet" data-lang="ts">interface Developer {}</div>
+            </div>
+            
+            <div class="interactive-grid">
+                <div class="grid-dot" style="--x: 10%; --y: 20%;"></div>
+                <div class="grid-dot" style="--x: 30%; --y: 15%;"></div>
+                <div class="grid-dot" style="--x: 70%; --y: 25%;"></div>
+                <div class="grid-dot" style="--x: 85%; --y: 35%;"></div>
+                <div class="grid-dot" style="--x: 15%; --y: 60%;"></div>
+                <div class="grid-dot" style="--x: 45%; --y: 70%;"></div>
+                <div class="grid-dot" style="--x: 75%; --y: 65%;"></div>
+                <div class="grid-dot" style="--x: 90%; --y: 80%;"></div>
+            </div>
+        </div>
+        
+        <div class="hero-content">
+            <div class="hero-text">
+                <div class="interactive-terminal-window">
+                    <div class="terminal-header">
+                        <div class="terminal-buttons">
+                            <span class="btn close interactive-btn" data-action="close"></span>
+                            <span class="btn minimize interactive-btn" data-action="minimize"></span>
+                            <span class="btn maximize interactive-btn" data-action="maximize"></span>
+                        </div>
+                        <div class="terminal-title">~/emmanuel's-portfolio</div>
+                        <div class="terminal-status">
+                            <span class="status-indicator online"></span>
+                            <span class="status-text">Connected</span>
+                        </div>
+                    </div>
+                    <div class="terminal-body">
+                        <div class="terminal-line completed">
+                            <span class="prompt">$</span>
+                            <span class="command">whoami</span>
+                            <span class="command-time">0.001s</span>
+                        </div>
+                        <div class="terminal-output">Emmanuel Boluwatife</div>
+                        
+                        <div class="terminal-line completed">
+                            <span class="prompt">$</span>
+                            <span class="command">cat skills.json | jq '.level'</span>
+                            <span class="command-time">0.003s</span>
+                        </div>
+                        <div class="terminal-output">"Senior Full-Stack Developer"</div>
+                        <div class="terminal-output">"10+ Years of Excellence"</div>
+                        
+                        <div class="terminal-line completed">
+                            <span class="prompt">$</span>
+                            <span class="command">npm run --version</span>
+                            <span class="command-time">0.002s</span>
+                        </div>
+                        <div class="terminal-output">expertise@10.0.0</div>
+                        
+                        <div class="terminal-line active">
+                            <span class="prompt">$</span>
+                            <span class="command typing-command"></span>
+                            <span class="terminal-cursor">|</span>
+                        </div>
+                        
+                        <div class="terminal-suggestions">
+                            <div class="suggestion" data-cmd="git status">git status</div>
+                            <div class="suggestion" data-cmd="npm start">npm start</div>
+                            <div class="suggestion" data-cmd="docker build">docker build</div>
+                            <div class="suggestion" data-cmd="kubectl apply">kubectl apply</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="hero-title-container">
+                    <h1 class="hero-title interactive-title">
+                        <span class="title-line morphing-text" data-words='["Building", "Crafting", "Creating", "Designing"]'>Building</span>
+                        <span class="title-line highlight glitch-text" data-text="Future">Future</span>
+                        <span class="title-line">of Web</span>
+                    </h1>
+                    
+                    <div class="title-decorations">
+                        <div class="decoration-line left"></div>
+                        <div class="decoration-line right"></div>
+                        <div class="floating-brackets">
+                            <span class="bracket left">&lt;</span>
+                            <span class="bracket right">/&gt;</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="hero-subtitle-container">
+                    <p class="hero-subtitle typewriter-text">
+                        Crafting scalable, performant, and beautiful digital experiences 
+                        with cutting-edge technologies and architectural excellence.
+                    </p>
+                    
+                    <div class="tech-badges">
+                        <span class="tech-badge interactive-badge" data-tech="React">⚛️ React</span>
+                        <span class="tech-badge interactive-badge" data-tech="Node.js">🟢 Node.js</span>
+                        <span class="tech-badge interactive-badge" data-tech="TypeScript">🔷 TypeScript</span>
+                        <span class="tech-badge interactive-badge" data-tech="AWS">☁️ AWS</span>
+                        <span class="tech-badge interactive-badge" data-tech="Docker">🐳 Docker</span>
+                    </div>
+                </div>
+                
+                <div class="hero-cta">
+                    <a href="#projects" class="cta-primary interactive-cta">
+                        <span class="cta-text">View My Work</span>
+                        <span class="cta-icon">🚀</span>
+                        <div class="cta-particles">
+                            <div class="particle"></div>
+                            <div class="particle"></div>
+                            <div class="particle"></div>
+                        </div>
+                        <div class="cta-bg"></div>
+                    </a>
+                    <a href="#contact" class="cta-secondary interactive-cta">
+                        <span class="cta-text">Let's Connect</span>
+                        <span class="cta-icon">💬</span>
+                        <div class="cta-border-animation"></div>
+                    </a>
+                </div>
+                
+                <div class="hero-stats-mini">
+                    <div class="mini-stat" data-count="500">
+                        <span class="mini-number">0</span>
+                        <span class="mini-label">Projects</span>
+                    </div>
+                    <div class="mini-stat" data-count="10">
+                        <span class="mini-number">0</span>
+                        <span class="mini-label">Years</span>
+                    </div>
+                    <div class="mini-stat" data-count="25">
+                        <span class="mini-number">0</span>
+                        <span class="mini-label">Technologies</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="hero-visual">
+                <div class="interactive-code-editor">
+                    <div class="editor-header">
+                        <div class="editor-tabs">
+                            <div class="tab active interactive-tab" data-file="app.js">
+                                <span class="tab-icon">📄</span>
+                                <span class="tab-name">app.js</span>
+                                <span class="tab-close">×</span>
+                            </div>
+                            <div class="tab interactive-tab" data-file="styles.css">
+                                <span class="tab-icon">🎨</span>
+                                <span class="tab-name">styles.css</span>
+                                <span class="tab-close">×</span>
+                            </div>
+                            <div class="tab interactive-tab" data-file="index.html">
+                                <span class="tab-icon">🌐</span>
+                                <span class="tab-name">index.html</span>
+                                <span class="tab-close">×</span>
+                            </div>
+                            
+                        </div>
+                        <div class="editor-controls">
+                            <button class="control-btn run-btn">▶️ Run</button>
+                            <button class="control-btn debug-btn">🐛 Debug</button>
+                            <button class="control-btn deploy-btn">🚀 Deploy</button>
+                        </div>
+                    </div>
+                    <div class="editor-content">
+                        <div class="line-numbers" id="line-numbers">
+                            <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span>
+                            <span>6</span><span>7</span><span>8</span><span>9</span><span>10</span>
+                            <span>11</span><span>12</span><span>13</span><span>14</span><span>15</span>
+                            <span>16</span><span>17</span><span>18</span>
+                        </div>
+                        <div class="code-content" id="code-content">
+                            <!-- App.js Content -->
+                            <div class="file-content active" data-file="app.js">
+                                <pre><code class="language-javascript interactive-code">
+<span class="code-line"><span class="keyword">const</span> <span class="variable">developer</span> = {</span>
+<span class="code-line">  <span class="property">name</span>: <span class="string">"Emmanuel Boluwatife"</span>,</span>
+<span class="code-line">  <span class="property">role</span>: <span class="string">"Senior Full-Stack Developer"</span>,</span>
+<span class="code-line">  <span class="property">experience</span>: <span class="string">"10+ years"</span>,</span>
+<span class="code-line">  <span class="property">specialties</span>: [</span>
+<span class="code-line">    <span class="string">"React/Next.js"</span>, <span class="string">"Node.js"</span>,</span>
+<span class="code-line">    <span class="string">"WordPress"</span>, <span class="string">"Cloud Architecture"</span></span>
+<span class="code-line">  ],</span>
+<span class="code-line">  <span class="property">passion</span>: <span class="string">"Building exceptional UX"</span>,</span>
+<span class="code-line">  </span>
+<span class="code-line">  <span class="function">createMagic</span>() {</span>
+<span class="code-line">    <span class="keyword">return</span> <span class="keyword">this</span>.<span class="property">experience</span> + <span class="keyword">this</span>.<span class="property">passion</span>;</span>
+<span class="code-line">  }</span>
+<span class="code-line">};</span>
+<span class="code-line"></span>
+<span class="code-line"><span class="console">console</span>.<span class="function">log</span>(<span class="variable">developer</span>.<span class="function">createMagic</span>());</span>
+<span class="code-line"><span class="comment">// Output: "Scalable Digital Solutions"</span></span>
+<span class="code-line typing-line"><span class="cursor-line">|</span></span>
+                                </code></pre>
+                            </div>
+                            
+                            <!-- Styles.css Content -->
+                            <div class="file-content" data-file="styles.css">
+                                <pre><code class="language-css interactive-code">
+<span class="code-line"><span class="comment">/* Emmanuel's Portfolio Styles */</span></span>
+<span class="code-line"><span class="selector">:root</span> {</span>
+<span class="code-line">  <span class="property">--primary-accent</span>: <span class="value">#00d4ff</span>;</span>
+<span class="code-line">  <span class="property">--secondary-accent</span>: <span class="value">#ff6b6b</span>;</span>
+<span class="code-line">  <span class="property">--gradient-primary</span>: <span class="value">linear-gradient(135deg, #00d4ff, #ff6b6b)</span>;</span>
+<span class="code-line">}</span>
+<span class="code-line"></span>
+<span class="code-line"><span class="selector">.hero-section</span> {</span>
+<span class="code-line">  <span class="property">background</span>: <span class="value">var(--gradient-primary)</span>;</span>
+<span class="code-line">  <span class="property">min-height</span>: <span class="value">100vh</span>;</span>
+<span class="code-line">  <span class="property">display</span>: <span class="value">flex</span>;</span>
+<span class="code-line">  <span class="property">align-items</span>: <span class="value">center</span>;</span>
+<span class="code-line">}</span>
+<span class="code-line"></span>
+<span class="code-line"><span class="selector">.interactive-element</span> {</span>
+<span class="code-line">  <span class="property">transition</span>: <span class="value">all 0.3s ease</span>;</span>
+<span class="code-line">  <span class="property">cursor</span>: <span class="value">pointer</span>;</span>
+<span class="code-line">}</span>
+<span class="code-line typing-line"><span class="cursor-line">|</span></span>
+                                </code></pre>
+                            </div>
+                            
+                            <!-- Index.html Content -->
+                            <div class="file-content" data-file="index.html">
+                                <pre><code class="language-html interactive-code">
+<span class="code-line"><span class="tag">&lt;!DOCTYPE html&gt;</span></span>
+<span class="code-line"><span class="tag">&lt;html</span> <span class="attribute">lang</span>=<span class="string">"en"</span><span class="tag">&gt;</span></span>
+<span class="code-line"><span class="tag">&lt;head&gt;</span></span>
+<span class="code-line">  <span class="tag">&lt;meta</span> <span class="attribute">charset</span>=<span class="string">"UTF-8"</span><span class="tag">&gt;</span></span>
+<span class="code-line">  <span class="tag">&lt;title&gt;</span>Emmanuel Boluwatife - Portfolio<span class="tag">&lt;/title&gt;</span></span>
+<span class="code-line">  <span class="tag">&lt;link</span> <span class="attribute">rel</span>=<span class="string">"stylesheet"</span> <span class="attribute">href</span>=<span class="string">"styles.css"</span><span class="tag">&gt;</span></span>
+<span class="code-line"><span class="tag">&lt;/head&gt;</span></span>
+<span class="code-line"><span class="tag">&lt;body&gt;</span></span>
+<span class="code-line">  <span class="tag">&lt;section</span> <span class="attribute">class</span>=<span class="string">"hero-section"</span><span class="tag">&gt;</span></span>
+<span class="code-line">    <span class="tag">&lt;h1&gt;</span>Building the Future of Web<span class="tag">&lt;/h1&gt;</span></span>
+<span class="code-line">    <span class="tag">&lt;p&gt;</span>Senior Full-Stack Developer<span class="tag">&lt;/p&gt;</span></span>
+<span class="code-line">  <span class="tag">&lt;/section&gt;</span></span>
+<span class="code-line">  <span class="tag">&lt;script</span> <span class="attribute">src</span>=<span class="string">"app.js"</span><span class="tag">&gt;&lt;/script&gt;</span></span>
+<span class="code-line"><span class="tag">&lt;/body&gt;</span></span>
+<span class="code-line"><span class="tag">&lt;/html&gt;</span></span>
+<span class="code-line typing-line"><span class="cursor-line">|</span></span>
+                                </code></pre>
+                            </div>
+                            
+                            <!-- Build Process View -->
+                            <div class="file-content build-process" data-file="build">
+                                <div class="terminal-output-container">
+                                    <div class="build-step" data-step="1">
+                                        <span class="step-icon">📦</span>
+                                        <span class="step-text">Installing dependencies...</span>
+                                        <div class="progress-bar"><div class="progress-fill"></div></div>
+                                    </div>
+                                    <div class="build-step" data-step="2">
+                                        <span class="step-icon">⚙️</span>
+                                        <span class="step-text">Building application...</span>
+                                        <div class="progress-bar"><div class="progress-fill"></div></div>
+                                    </div>
+                                    <div class="build-step" data-step="3">
+                                        <span class="step-icon">🔍</span>
+                                        <span class="step-text">Running tests...</span>
+                                        <div class="progress-bar"><div class="progress-fill"></div></div>
+                                    </div>
+                                    <div class="build-step" data-step="4">
+                                        <span class="step-icon">✅</span>
+                                        <span class="step-text">Build successful!</span>
+                                        <div class="progress-bar"><div class="progress-fill complete"></div></div>
+                                    </div>
+                                    <div class="build-output">
+                                        <div class="output-line success">✨ Build completed in 2.3s</div>
+                                        <div class="output-line">📊 Bundle size: 245KB (gzipped: 89KB)</div>
+                                        <div class="output-line">🚀 Ready for deployment!</div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Deployed App View -->
+                            <div class="file-content deployed-app" data-file="deploy">
+                                <div class="deployed-app-container">
+                                    <div class="app-header">
+                                        <div class="app-logo">
+                                            <div class="logo-icon">👨‍💻</div>
+                                            <div class="logo-text">Emmanuel</div>
+                                        </div>
+                                        <div class="app-nav">
+                                            <span class="nav-item active">Home</span>
+                                            <span class="nav-item">About</span>
+                                            <span class="nav-item">Projects</span>
+                                            <span class="nav-item">Contact</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="app-hero">
+                                        <div class="hero-content-app">
+                                            <h1 class="app-title">Emmanuel Boluwatife</h1>
+                                            <p class="app-subtitle">Senior Full-Stack Developer</p>
+                                            <div class="app-stats">
+                                                <div class="stat-item-app">
+                                                    <div class="stat-number-app">500+</div>
+                                                    <div class="stat-label-app">Projects</div>
+                                                </div>
+                                                <div class="stat-item-app">
+                                                    <div class="stat-number-app">10+</div>
+                                                    <div class="stat-label-app">Years</div>
+                                                </div>
+                                                <div class="stat-item-app">
+                                                    <div class="stat-number-app">25+</div>
+                                                    <div class="stat-label-app">Technologies</div>
+                                                </div>
+                                            </div>
+                                            <div class="app-cta">
+                                                <button class="cta-btn primary">View Projects</button>
+                                                <button class="cta-btn secondary">Contact Me</button>
+                                            </div>
+                                        </div>
+                                        <div class="hero-visual-app">
+                                            <div class="floating-elements">
+                                                <div class="float-item">⚛️</div>
+                                                <div class="float-item">🟢</div>
+                                                <div class="float-item">🔷</div>
+                                                <div class="float-item">☁️</div>
+                                                <div class="float-item">🐳</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="deployment-status">
+                                        <div class="status-indicator-deploy online"></div>
+                                        <span class="status-text-deploy">Live at: https://emmanuel-portfolio.vercel.app</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Debug Content -->
+                            <div class="file-content" data-file="debug">
+                                <pre><code class="language-json">{
+  "performance": {
+    "memoryUsage": "45.2MB",
+    "bundleSize": "245KB", 
+    "loadTime": "1.2s",
+    "performanceScore": "98/100"
+  },
+  "status": {
+    "errors": 0,
+    "warnings": 0,
+    "linting": "✅ Passed",
+    "tests": "✅ All passed",
+    "coverage": "94.7%"
+  }
+}</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="editor-footer">
+                        <div class="editor-status">
+                            <span class="status-item">✅ No Problems</span>
+                            <span class="status-item">📊 18 lines</span>
+                            <span class="status-item">🔥 Hot Reload</span>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+        <div class="scroll-indicator interactive-scroll">
+            <div class="scroll-text">Scroll to explore my journey</div>
+            <div class="scroll-arrow animated-arrow">
+                <div class="arrow-line"></div>
+                <div class="arrow-head"></div>
+            </div>
+            <div class="scroll-progress-mini">
+                <div class="progress-dot"></div>
+                <div class="progress-dot"></div>
+                <div class="progress-dot"></div>
+                <div class="progress-dot active"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title glitch-text" data-text="About Me">About Me</h2>
+                <div class="section-subtitle typing-subtitle">The Developer Behind the Code</div>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-text">
+                    <div class="interactive-story">
+                        <div class="story-timeline">
+                            <div class="timeline-item active" data-year="2015">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-content">
+                                    <h3>The Beginning</h3>
+                                    <p>Started as a curious intern, building my first responsive websites and falling in love with clean code.</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item" data-year="2018">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-content">
+                                    <h3>Full-Stack Evolution</h3>
+                                    <p>Mastered both frontend and backend, creating seamless user experiences with robust architectures.</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item" data-year="2021">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-content">
+                                    <h3>Team Leadership</h3>
+                                    <p>Led development teams, mentored junior developers, and architected enterprise-scale solutions.</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item" data-year="2025">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-content">
+                                    <h3>Senior Architect</h3>
+                                    <p>Now crafting scalable, performant solutions that serve millions while pushing the boundaries of web technology.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="interactive-stats">
+                        <div class="stats-grid">
+                            <div class="stat-item interactive-stat" data-stat="projects">
+                                <div class="stat-icon">🚀</div>
+                                <div class="stat-number" data-count="500">0</div>
+                                <div class="stat-label">Projects Delivered</div>
+                                <div class="stat-detail">From startups to Fortune 500 companies</div>
+                            </div>
+                            <div class="stat-item interactive-stat" data-stat="experience">
+                                <div class="stat-icon">⚡</div>
+                                <div class="stat-number" data-count="10">0</div>
+                                <div class="stat-label">Years Experience</div>
+                                <div class="stat-detail">Continuous learning and innovation</div>
+                            </div>
+                            <div class="stat-item interactive-stat" data-stat="technologies">
+                                <div class="stat-icon">🛠️</div>
+                                <div class="stat-number" data-count="25">0</div>
+                                <div class="stat-label">Technologies Mastered</div>
+                                <div class="stat-detail">Always expanding my toolkit</div>
+                            </div>
+                            <div class="stat-item interactive-stat" data-stat="satisfaction">
+                                <div class="stat-icon">⭐</div>
+                                <div class="stat-number" data-count="100">0</div>
+                                <div class="stat-label">Client Satisfaction</div>
+                                <div class="stat-detail">Exceeding expectations every time</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="about-visual">
+                    <div class="interactive-tech-sphere">
+                        <div class="sphere-container">
+                            <div class="central-avatar">
+                                <div class="avatar-ring"></div>
+                                <div class="avatar-core">
+                                    <span class="avatar-text">EB</span>
+                                    <div class="pulse-effect"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="tech-constellation">
+                                <div class="tech-star" data-tech="React" data-level="95" style="--x: 20%; --y: 15%;">
+                                    <div class="star-core">⚛️</div>
+                                    <div class="star-name">React</div>
+                                    <div class="connection-line"></div>
+                                </div>
+                                <div class="tech-star" data-tech="Node.js" data-level="92" style="--x: 80%; --y: 25%;">
+                                    <div class="star-core">🟢</div>
+                                    <div class="star-name">Node.js</div>
+                                    <div class="connection-line"></div>
+                                </div>
+                                <div class="tech-star" data-tech="TypeScript" data-level="90" style="--x: 15%; --y: 70%;">
+                                    <div class="star-core">🔷</div>
+                                    <div class="star-name">TypeScript</div>
+                                    <div class="connection-line"></div>
+                                </div>
+                                <div class="tech-star" data-tech="AWS" data-level="88" style="--x: 85%; --y: 75%;">
+                                    <div class="star-core">☁️</div>
+                                    <div class="star-name">AWS</div>
+                                    <div class="connection-line"></div>
+                                </div>
+                                <div class="tech-star" data-tech="Docker" data-level="85" style="--x: 50%; --y: 10%;">
+                                    <div class="star-core">🐳</div>
+                                    <div class="star-name">Docker</div>
+                                    <div class="connection-line"></div>
+                                </div>
+                                <div class="tech-star" data-tech="GraphQL" data-level="87" style="--x: 10%; --y: 45%;">
+                                    <div class="star-core">🔗</div>
+                                    <div class="star-name">GraphQL</div>
+                                    <div class="connection-line"></div>
+                                </div>
+                                <div class="tech-star" data-tech="MongoDB" data-level="83" style="--x: 90%; --y: 50%;">
+                                    <div class="star-core">🍃</div>
+                                    <div class="star-name">MongoDB</div>
+                                    <div class="connection-line"></div>
+                                </div>
+                                <div class="tech-star" data-tech="Kubernetes" data-level="80" style="--x: 50%; --y: 85%;">
+                                    <div class="star-core">⚙️</div>
+                                    <div class="star-name">Kubernetes</div>
+                                    <div class="connection-line"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="floating-particles">
+                                <div class="particle" style="--delay: 0s; --duration: 8s;"></div>
+                                <div class="particle" style="--delay: 2s; --duration: 10s;"></div>
+                                <div class="particle" style="--delay: 4s; --duration: 12s;"></div>
+                                <div class="particle" style="--delay: 6s; --duration: 9s;"></div>
+                                <div class="particle" style="--delay: 1s; --duration: 11s;"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="tech-tooltip">
+                            <div class="tooltip-content">
+                                <h4 class="tooltip-title"></h4>
+                                <div class="tooltip-level">
+                                    <span class="level-label">Expertise Level:</span>
+                                    <div class="level-bar">
+                                        <div class="level-fill"></div>
+                                    </div>
+                                    <span class="level-percentage"></span>
+                                </div>
+                                <p class="tooltip-description"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="philosophy-section">
+                <div class="philosophy-card interactive-card">
+                    <div class="card-header">
+                        <div class="card-icon">💭</div>
+                        <h3>My Development Philosophy</h3>
+                    </div>
+                    <div class="philosophy-content">
+                        <div class="philosophy-item" data-principle="clean-code">
+                            <div class="principle-icon">✨</div>
+                            <div class="principle-text">
+                                <h4>Clean Code</h4>
+                                <p>Code should be readable, maintainable, and elegant</p>
+                            </div>
+                        </div>
+                        <div class="philosophy-item" data-principle="user-first">
+                            <div class="principle-icon">👥</div>
+                            <div class="principle-text">
+                                <h4>User-First Design</h4>
+                                <p>Every decision should enhance the user experience</p>
+                            </div>
+                        </div>
+                        <div class="philosophy-item" data-principle="performance">
+                            <div class="principle-icon">⚡</div>
+                            <div class="principle-text">
+                                <h4>Performance Matters</h4>
+                                <p>Fast, efficient solutions that scale gracefully</p>
+                            </div>
+                        </div>
+                        <div class="philosophy-item" data-principle="innovation">
+                            <div class="principle-icon">🚀</div>
+                            <div class="principle-text">
+                                <h4>Continuous Innovation</h4>
+                                <p>Always learning, always pushing boundaries</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
   
 
-  <section id="experience" class="slide-in">
-    <h2>Experience</h2>
+    <!-- Interactive Technical Expertise Section -->
+    <section id="expertise" class="expertise-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title glitch-text">Technical Expertise</h2>
+                <div class="section-subtitle typing-text">Mastery Across the Full Stack</div>
+            </div>
+            
+            <!-- Interactive Tech Universe -->
+            <div class="tech-universe">
+                <div class="universe-center">
+                    <div class="center-avatar">
+                        <div class="avatar-ring"></div>
+                        <div class="avatar-core">
+                            <span class="avatar-text">EB</span>
+                        </div>
+                        <div class="pulse-wave"></div>
+                    </div>
+                </div>
+                
+                <!-- Orbiting Tech Categories -->
+                <div class="tech-orbit orbit-1">
+                    <div class="tech-planet frontend-planet" data-category="frontend">
+                        <div class="planet-core">
+                            <span class="planet-icon">🎨</span>
+                        </div>
+                        <div class="planet-ring"></div>
+                        <div class="planet-label">Frontend</div>
+                    </div>
+                </div>
+                
+                <div class="tech-orbit orbit-2">
+                    <div class="tech-planet backend-planet" data-category="backend">
+                        <div class="planet-core">
+                            <span class="planet-icon">⚙️</span>
+                        </div>
+                        <div class="planet-ring"></div>
+                        <div class="planet-label">Backend</div>
+                    </div>
+                </div>
+                
+                <div class="tech-orbit orbit-3">
+                    <div class="tech-planet cloud-planet" data-category="cloud">
+                        <div class="planet-core">
+                            <span class="planet-icon">☁️</span>
+                        </div>
+                        <div class="planet-ring"></div>
+                        <div class="planet-label">Cloud</div>
+                    </div>
+                </div>
+                
+                <!-- Floating Tech Skills -->
+                <div class="floating-skills">
+                    <div class="skill-node react-node" data-skill="React" data-level="95">
+                        <span class="skill-icon">⚛️</span>
+                        <div class="skill-tooltip">React/Next.js - 95%</div>
+                    </div>
+                    <div class="skill-node typescript-node" data-skill="TypeScript" data-level="90">
+                        <span class="skill-icon">🔷</span>
+                        <div class="skill-tooltip">TypeScript - 90%</div>
+                    </div>
+                    <div class="skill-node node-node" data-skill="Node.js" data-level="92">
+                        <span class="skill-icon">🟢</span>
+                        <div class="skill-tooltip">Node.js - 92%</div>
+                    </div>
+                    <div class="skill-node aws-node" data-skill="AWS" data-level="88">
+                        <span class="skill-icon">☁️</span>
+                        <div class="skill-tooltip">AWS - 88%</div>
+                    </div>
+                    <div class="skill-node docker-node" data-skill="Docker" data-level="85">
+                        <span class="skill-icon">🐳</span>
+                        <div class="skill-tooltip">Docker - 85%</div>
+                    </div>
+                    <div class="skill-node php-node" data-skill="PHP" data-level="95">
+                        <span class="skill-icon">🐘</span>
+                        <div class="skill-tooltip">PHP/Laravel - 95%</div>
+                    </div>
+                </div>
+                
+                <!-- Interactive Skill Panel -->
+                <div class="skill-panel" id="skillPanel">
+                    <div class="panel-header">
+                        <h3 class="panel-title">Frontend Architecture</h3>
+                        <button class="panel-close">×</button>
+                    </div>
+                    <div class="panel-content">
+                        <div class="skill-details">
+                            <div class="skill-detail-item">
+                                <div class="skill-name">React/Next.js</div>
+                                <div class="skill-bar">
+                                    <div class="skill-fill" data-width="95"></div>
+                                    <span class="skill-percent">95%</span>
+                                </div>
+                            </div>
+                            <div class="skill-detail-item">
+                                <div class="skill-name">TypeScript</div>
+                                <div class="skill-bar">
+                                    <div class="skill-fill" data-width="90"></div>
+                                    <span class="skill-percent">90%</span>
+                                </div>
+                            </div>
+                            <div class="skill-detail-item">
+                                <div class="skill-name">Modern CSS/SCSS</div>
+                                <div class="skill-bar">
+                                    <div class="skill-fill" data-width="98"></div>
+                                    <span class="skill-percent">98%</span>
+                                </div>
+                            </div>
+                            <div class="skill-detail-item">
+                                <div class="skill-name">Vue.js/Nuxt</div>
+                                <div class="skill-bar">
+                                    <div class="skill-fill" data-width="85"></div>
+                                    <span class="skill-percent">85%</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel-stats">
+                            <div class="stat-item">
+                                <div class="stat-number">50+</div>
+                                <div class="stat-label">Projects</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">5+</div>
+                                <div class="stat-label">Years</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Particle System -->
+                <div class="tech-particles">
+                    <div class="particle" style="--x: 10%; --y: 20%; --delay: 0s;"></div>
+                    <div class="particle" style="--x: 30%; --y: 40%; --delay: 1s;"></div>
+                    <div class="particle" style="--x: 60%; --y: 15%; --delay: 2s;"></div>
+                    <div class="particle" style="--x: 80%; --y: 60%; --delay: 3s;"></div>
+                    <div class="particle" style="--x: 20%; --y: 80%; --delay: 4s;"></div>
+                    <div class="particle" style="--x: 70%; --y: 30%; --delay: 5s;"></div>
+                </div>
+            </div>
+            
+            <!-- Interactive Stats Dashboard -->
+            <div class="expertise-dashboard">
+                <div class="dashboard-item" data-count="500">
+                    <div class="dashboard-icon">💻</div>
+                    <div class="dashboard-number">0</div>
+                    <div class="dashboard-label">Projects Completed</div>
+                </div>
+                <div class="dashboard-item" data-count="25">
+                    <div class="dashboard-icon">🚀</div>
+                    <div class="dashboard-number">0</div>
+                    <div class="dashboard-label">Technologies Mastered</div>
+                </div>
+                <div class="dashboard-item" data-count="10">
+                    <div class="dashboard-icon">⭐</div>
+                    <div class="dashboard-number">0</div>
+                    <div class="dashboard-label">Years Experience</div>
+                </div>
+                <div class="dashboard-item" data-count="98">
+                    <div class="dashboard-icon">📊</div>
+                    <div class="dashboard-number">0</div>
+                    <div class="dashboard-label">Client Satisfaction</div>
+                </div>
+            </div>
+        </div>
+    </section>
   
-    <div class="job">
-      <h3>Senior WordPress Developer – Fat Beehive <span>(2025–Present)</span></h3>
-      <ul>
-        <li>Leading the development of accessible, user-friendly WordPress sites for non-profits and mission-driven organizations</li>
-        <li>Building custom themes and ACF-powered blocks tailored to client needs</li>
-        <li>Collaborating with designers and PMs from discovery to deployment</li>
-        <li>Managing Git-based workflows and contributing to DevOps improvements</li>
-      </ul>
-    </div>
-  
-    <div class="job">
-      <h3>Senior Web Developer / Team Lead – Kodekrew Technology <span>(2021–2023)</span></h3>
-      <ul>
-        <li>Directed a small team delivering fullstack solutions with WordPress, React, and Laravel</li>
-        <li>Integrated complex APIs and delivered enterprise-grade websites</li>
-        <li>Mentored junior devs, led code reviews, and implemented CI/CD pipelines</li>
-      </ul>
-    </div>
-  
-    <div class="job">
-      <h3>Senior WordPress Developer – ESSL <span>(2019–2021)</span></h3>
-      <ul>
-        <li>Managed high-traffic WordPress sites across multiple industries</li>
-        <li>Customized WooCommerce and reusable ACF components</li>
-        <li>Collaborated with UI/UX teams and maintained production environments</li>
-      </ul>
-    </div>
-  
-    <div class="job">
-      <h3>WordPress Developer – Orange Designs <span>(2017–2019)</span></h3>
-      <ul>
-        <li>Developed custom themes and plugins for various clients</li>
-        <li>Optimized backend performance and handled site migrations</li>
-        <li>Integrated third-party APIs and extended WordPress core features</li>
-      </ul>
-    </div>
-  
-    <div class="job">
-      <h3>Web Dev Intern – Techo Inc <span>(2015–2017)</span></h3>
-      <ul>
-        <li>Built responsive UI from mockups using HTML, CSS, JavaScript</li>
-        <li>Supported frontend/backend integration in PHP projects</li>
-        <li>Worked with designers to achieve pixel-perfect output</li>
-      </ul>
-    </div>
-  </section>
-  <section id="education" class="slide-in">
-    <h2>Education & Certifications</h2>
-  
-    <div class="edu">
-      <h3>B.Sc. Physiology</h3>
-      <p>University of Ibadan, Nigeria</p>
-    </div>
-  
-    <div class="certs">
-      <h4>Certifications:</h4>
-      <ul>
-        <li>Certified Web Professional (CIW)</li>
-        <li>HTML5, CSS3 & JavaScript Certification</li>
-        <li>Advanced WordPress Theme Development</li>
-        <li>React Developer Certificate – Meta (Coursera)</li>
-        <li>Git & GitHub for Developers – LinkedIn Learning</li>
-        <li>WordPress Plugin Development – WP Academy</li>
-        <li>JavaScript Algorithms & Data Structures – freeCodeCamp</li>
-        <li>Docker Essentials for Web Developers – Udemy</li>
-      </ul>
+
+  <!-- Interactive Experience Timeline -->
+  <section id="experience" class="experience-timeline-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title timeline-title">Professional Journey</h2>
+        <div class="section-subtitle">A Decade of Innovation & Growth</div>
+      </div>
+      
+      <!-- Interactive Timeline -->
+      <div class="timeline-container">
+        <div class="timeline-line">
+          <div class="timeline-progress"></div>
+        </div>
+        
+        <!-- Experience Cards -->
+        <div class="timeline-item" data-year="2025" data-type="current">
+          <div class="timeline-marker">
+            <div class="marker-ring"></div>
+            <div class="marker-core">🚀</div>
+            <div class="marker-pulse"></div>
+          </div>
+          <div class="timeline-card">
+            <div class="card-header">
+              <div class="company-logo">FB</div>
+              <div class="job-info">
+                <h3 class="job-title">Senior WordPress Developer</h3>
+                <div class="company-name">Fat Beehive</div>
+                <div class="job-period">2025 – Present</div>
+              </div>
+              <div class="job-status current">Current</div>
+            </div>
+            <div class="card-content">
+              <div class="achievements">
+                <div class="achievement-item">
+                  <span class="achievement-icon">🌟</span>
+                  <span>Leading accessible WordPress development for non-profits</span>
+                </div>
+                <div class="achievement-item">
+                  <span class="achievement-icon">🎨</span>
+                  <span>Building custom ACF-powered themes and blocks</span>
+                </div>
+                <div class="achievement-item">
+                  <span class="achievement-icon">🤝</span>
+                  <span>Collaborating with designers and PMs end-to-end</span>
+                </div>
+                <div class="achievement-item">
+                  <span class="achievement-icon">⚙️</span>
+                  <span>Managing Git workflows and DevOps improvements</span>
+                </div>
+              </div>
+              <div class="tech-stack-mini">
+                <span class="tech-tag">WordPress</span>
+                <span class="tech-tag">ACF</span>
+                <span class="tech-tag">Git</span>
+                <span class="tech-tag">DevOps</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="timeline-item" data-year="2021" data-type="senior">
+          <div class="timeline-marker">
+            <div class="marker-ring"></div>
+            <div class="marker-core">👨‍💼</div>
+          </div>
+          <div class="timeline-card">
+            <div class="card-header">
+              <div class="company-logo">KT</div>
+              <div class="job-info">
+                <h3 class="job-title">Senior Web Developer / Team Lead</h3>
+                <div class="company-name">Kodekrew Technology</div>
+                <div class="job-period">2021 – 2023</div>
+              </div>
+              <div class="job-status senior">Team Lead</div>
+            </div>
+            <div class="card-content">
+              <div class="achievements">
+                <div class="achievement-item">
+                  <span class="achievement-icon">👥</span>
+                  <span>Directed fullstack team with WordPress, React, Laravel</span>
+                </div>
+                <div class="achievement-item">
+                  <span class="achievement-icon">🔗</span>
+                  <span>Integrated complex APIs for enterprise solutions</span>
+                </div>
+                <div class="achievement-item">
+                  <span class="achievement-icon">🎓</span>
+                  <span>Mentored junior developers and led code reviews</span>
+                </div>
+                <div class="achievement-item">
+                  <span class="achievement-icon">🔄</span>
+                  <span>Implemented CI/CD pipelines and workflows</span>
+                </div>
+              </div>
+              <div class="tech-stack-mini">
+                <span class="tech-tag">React</span>
+                <span class="tech-tag">Laravel</span>
+                <span class="tech-tag">APIs</span>
+                <span class="tech-tag">CI/CD</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="timeline-item" data-year="2019" data-type="senior">
+          <div class="timeline-marker">
+            <div class="marker-ring"></div>
+            <div class="marker-core">💼</div>
+          </div>
+          <div class="timeline-card">
+            <div class="card-header">
+              <div class="company-logo">ES</div>
+              <div class="job-info">
+                <h3 class="job-title">Senior WordPress Developer</h3>
+                <div class="company-name">ESSL</div>
+                <div class="job-period">2019 – 2021</div>
+              </div>
+              <div class="job-status senior">Senior</div>
+            </div>
+            <div class="card-content">
+              <div class="achievements">
+                <div class="achievement-item">
+                  <span class="achievement-icon">📈</span>
+                  <span>Managed high-traffic WordPress sites across industries</span>
+                </div>
+                <div class="achievement-item">
+                  <span class="achievement-icon">🛒</span>
+                  <span>Customized WooCommerce and reusable ACF components</span>
+                </div>
+                <div class="achievement-item">
+                  <span class="achievement-icon">🎨</span>
+                  <span>Collaborated with UI/UX teams on production sites</span>
+                </div>
+              </div>
+              <div class="tech-stack-mini">
+                <span class="tech-tag">WordPress</span>
+                <span class="tech-tag">WooCommerce</span>
+                <span class="tech-tag">ACF</span>
+                <span class="tech-tag">UI/UX</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="timeline-item" data-year="2017" data-type="developer">
+          <div class="timeline-marker">
+            <div class="marker-ring"></div>
+            <div class="marker-core">🔧</div>
+          </div>
+          <div class="timeline-card">
+            <div class="card-header">
+              <div class="company-logo">OD</div>
+              <div class="job-info">
+                <h3 class="job-title">WordPress Developer</h3>
+                <div class="company-name">Orange Designs</div>
+                <div class="job-period">2017 – 2019</div>
+              </div>
+              <div class="job-status developer">Developer</div>
+            </div>
+            <div class="card-content">
+              <div class="achievements">
+                <div class="achievement-item">
+                  <span class="achievement-icon">🎨</span>
+                  <span>Developed custom themes and plugins for clients</span>
+                </div>
+                <div class="achievement-item">
+                  <span class="achievement-icon">⚡</span>
+                  <span>Optimized backend performance and site migrations</span>
+                </div>
+                <div class="achievement-item">
+                  <span class="achievement-icon">🔌</span>
+                  <span>Integrated APIs and extended WordPress core</span>
+                </div>
+              </div>
+              <div class="tech-stack-mini">
+                <span class="tech-tag">WordPress</span>
+                <span class="tech-tag">PHP</span>
+                <span class="tech-tag">APIs</span>
+                <span class="tech-tag">Plugins</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="timeline-item" data-year="2015" data-type="intern">
+          <div class="timeline-marker">
+            <div class="marker-ring"></div>
+            <div class="marker-core">🌱</div>
+          </div>
+          <div class="timeline-card">
+            <div class="card-header">
+              <div class="company-logo">TI</div>
+              <div class="job-info">
+                <h3 class="job-title">Web Dev Intern</h3>
+                <div class="company-name">Techo Inc</div>
+                <div class="job-period">2015 – 2017</div>
+              </div>
+              <div class="job-status intern">Intern</div>
+            </div>
+            <div class="card-content">
+              <div class="achievements">
+                <div class="achievement-item">
+                  <span class="achievement-icon">📱</span>
+                  <span>Built responsive UI from design mockups</span>
+                </div>
+                <div class="achievement-item">
+                  <span class="achievement-icon">🔗</span>
+                  <span>Supported frontend/backend integration in PHP</span>
+                </div>
+                <div class="achievement-item">
+                  <span class="achievement-icon">🎯</span>
+                  <span>Achieved pixel-perfect design implementation</span>
+                </div>
+              </div>
+              <div class="tech-stack-mini">
+                <span class="tech-tag">HTML</span>
+                <span class="tech-tag">CSS</span>
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">PHP</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <section id="projects" class="slide-in">
-    <h2>Projects</h2>
-    <div class="projects-grid">
-  
-        <a href="https://www.bornfree.org.uk" target="_blank" class="project-card">
-            <img src="https://api.microlink.io/?url=https://www.bornfree.org.uk&screenshot=true&embed=screenshot.url" alt="Born Free" />
-            <div class="overlay">Born Free</div>
-          </a>
+  <!-- Interactive Education & Certifications -->
+  <section id="education" class="education-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title education-title">Education & Certifications</h2>
+        <div class="section-subtitle">Continuous Learning & Professional Growth</div>
+      </div>
+      
+      <div class="education-grid">
+        <!-- Education Card -->
+        <div class="education-card degree-card">
+          <div class="card-icon">🎓</div>
+          <div class="card-content">
+            <h3 class="degree-title">Bachelor of Science</h3>
+            <div class="degree-field">Physiology</div>
+            <div class="university">University of Ibadan, Nigeria</div>
+            <div class="degree-year">2015</div>
+          </div>
+          <div class="card-decoration">
+            <div class="decoration-ring"></div>
+          </div>
+        </div>
+        
+        <!-- Certifications Grid -->
+        <div class="certifications-container">
+          <h3 class="certs-title">Professional Certifications</h3>
+          <div class="certifications-grid">
+            <div class="cert-card" data-provider="CIW">
+              <div class="cert-icon">🏆</div>
+              <div class="cert-name">Certified Web Professional</div>
+              <div class="cert-provider">CIW</div>
+            </div>
+            
+            <div class="cert-card" data-provider="Meta">
+              <div class="cert-icon">⚛️</div>
+              <div class="cert-name">React Developer Certificate</div>
+              <div class="cert-provider">Meta (Coursera)</div>
+            </div>
+            
+            <div class="cert-card" data-provider="LinkedIn">
+              <div class="cert-icon">📚</div>
+              <div class="cert-name">Git & GitHub for Developers</div>
+              <div class="cert-provider">LinkedIn Learning</div>
+            </div>
+            
+            <div class="cert-card" data-provider="WP Academy">
+              <div class="cert-icon">🔌</div>
+              <div class="cert-name">WordPress Plugin Development</div>
+              <div class="cert-provider">WP Academy</div>
+            </div>
+            
+            <div class="cert-card" data-provider="freeCodeCamp">
+              <div class="cert-icon">💻</div>
+              <div class="cert-name">JavaScript Algorithms & Data Structures</div>
+              <div class="cert-provider">freeCodeCamp</div>
+            </div>
+            
+            <div class="cert-card" data-provider="Udemy">
+              <div class="cert-icon">🐳</div>
+              <div class="cert-name">Docker Essentials for Web Developers</div>
+              <div class="cert-provider">Udemy</div>
+            </div>
+            
+            <div class="cert-card" data-provider="General">
+              <div class="cert-icon">🌐</div>
+              <div class="cert-name">HTML5, CSS3 & JavaScript</div>
+              <div class="cert-provider">Certification</div>
+            </div>
+            
+            <div class="cert-card" data-provider="WordPress">
+              <div class="cert-icon">🎨</div>
+              <div class="cert-name">Advanced WordPress Theme Development</div>
+              <div class="cert-provider">Professional</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+    <!-- Interactive Projects Showcase -->
+    <section id="projects" class="projects-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title projects-title">Demo Projects</h2>
+                <div class="section-subtitle">Showcasing Technical Excellence & Innovation</div>
+            </div>
+            
+            <!-- Project Filter Tabs -->
+            <div class="project-filters">
+                <button class="filter-btn active" data-filter="all">All Projects</button>
+                <button class="filter-btn" data-filter="fullstack">Full-Stack</button>
+                <button class="filter-btn" data-filter="wordpress">WordPress</button>
+                <button class="filter-btn" data-filter="ecommerce">E-Commerce</button>
+                <button class="filter-btn" data-filter="nonprofit">Non-Profit</button>
+            </div>
+            
+            <!-- Featured Project Carousel -->
+            <div class="featured-projects-carousel">
+                <div class="carousel-container">
+                    <!-- Project 1: NexCommerce Platform -->
+                    <div class="project-slide active" data-category="fullstack ecommerce">
+                        <div class="project-visual">
+                            <div class="project-mockup">
+                                <div class="browser-frame">
+                                    <div class="browser-header">
+                                        <div class="browser-dots">
+                                            <span class="dot red"></span>
+                                            <span class="dot yellow"></span>
+                                            <span class="dot green"></span>
+                                        </div>
+                                        <div class="browser-url">nexcommerce.dev</div>
+                                        <div class="browser-actions">
+                                            <span class="action-btn">⟲</span>
+                                            <span class="action-btn">🔒</span>
+                                        </div>
+                                    </div>
+                                    <div class="browser-content">
+                                        <div class="mockup-ecommerce">
+                                            <div class="ecommerce-header">
+                                                <div class="logo-area">NexCommerce</div>
+                                                <div class="nav-items">
+                                                    <span>Products</span>
+                                                    <span>Categories</span>
+                                                    <span>Cart (3)</span>
+                                                </div>
+                                            </div>
+                                            <div class="ecommerce-hero">
+                                                <div class="hero-text">
+                                                    <h3>Premium Collection</h3>
+                                                    <p>AI-Powered Recommendations</p>
+                                                </div>
+                                                <div class="product-grid">
+                                                    <div class="product-item"></div>
+                                                    <div class="product-item"></div>
+                                                    <div class="product-item"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <div class="project-category">Full-Stack E-Commerce</div>
+                            <h3 class="project-title">NexCommerce Platform</h3>
+                            <p class="project-description">Enterprise-grade e-commerce platform featuring real-time inventory management, AI-powered product recommendations, advanced analytics dashboard, and seamless payment integration.</p>
+                            <div class="project-features">
+                                <div class="feature-item">
+                                    <span class="feature-icon">🤖</span>
+                                    <span>AI Recommendations</span>
+                                </div>
+                                <div class="feature-item">
+                                    <span class="feature-icon">📊</span>
+                                    <span>Real-time Analytics</span>
+                                </div>
+                                <div class="feature-item">
+                                    <span class="feature-icon">💳</span>
+                                    <span>Multi-Payment Gateway</span>
+                                </div>
+                                <div class="feature-item">
+                                    <span class="feature-icon">📱</span>
+                                    <span>Mobile-First Design</span>
+                                </div>
+                            </div>
+                            <div class="project-tech">
+                                <span class="tech-tag">Next.js</span>
+                                <span class="tech-tag">Node.js</span>
+                                <span class="tech-tag">PostgreSQL</span>
+                                <span class="tech-tag">Redis</span>
+                                <span class="tech-tag">AWS</span>
+                                <span class="tech-tag">Stripe</span>
+                            </div>
+                            <div class="project-actions">
+                                <button class="btn-primary project-btn" data-action="demo">
+                                    <span>🚀</span> Live Demo
+                                </button>
+                                <button class="btn-secondary project-btn" data-action="code">
+                                    <span>💻</span> View Code
+                                </button>
+                                <button class="btn-tertiary project-btn" data-action="details">
+                                    <span>📋</span> Full Details
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 2: WordPress Multisite Manager -->
+                    <div class="project-slide" data-category="wordpress fullstack">
+                        <div class="project-visual">
+                            <div class="project-mockup">
+                                <div class="browser-frame">
+                                    <div class="browser-header">
+                                        <div class="browser-dots">
+                                            <span class="dot red"></span>
+                                            <span class="dot yellow"></span>
+                                            <span class="dot green"></span>
+                                        </div>
+                                        <div class="browser-url">wp-multisite-manager.dev</div>
+                                        <div class="browser-actions">
+                                            <span class="action-btn">⟲</span>
+                                            <span class="action-btn">🔒</span>
+                                        </div>
+                                    </div>
+                                    <div class="browser-content">
+                                        <div class="mockup-wordpress">
+                                            <div class="wp-sidebar">
+                                                <div class="wp-logo">WP</div>
+                                                <div class="wp-menu">
+                                                    <div class="menu-item active">Dashboard</div>
+                                                    <div class="menu-item">Sites</div>
+                                                    <div class="menu-item">Users</div>
+                                                    <div class="menu-item">Themes</div>
+                                                    <div class="menu-item">Plugins</div>
+                                                </div>
+                                            </div>
+                                            <div class="wp-main">
+                                                <div class="wp-header">
+                                                    <h3>Multisite Network</h3>
+                                                    <div class="wp-stats">
+                                                        <div class="stat-box">25 Sites</div>
+                                                        <div class="stat-box">1.2K Users</div>
+                                                    </div>
+                                                </div>
+                                                <div class="wp-content">
+                                                    <div class="site-grid">
+                                                        <div class="site-card"></div>
+                                                        <div class="site-card"></div>
+                                                        <div class="site-card"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <div class="project-category">WordPress Multisite</div>
+                            <h3 class="project-title">WP Multisite Manager</h3>
+                            <p class="project-description">Advanced WordPress multisite management platform with automated deployments, centralized user management, theme/plugin distribution, and comprehensive analytics across multiple sites.</p>
+                            <div class="project-features">
+                                <div class="feature-item">
+                                    <span class="feature-icon">🌐</span>
+                                    <span>Multi-Site Management</span>
+                                </div>
+                                <div class="feature-item">
+                                    <span class="feature-icon">🚀</span>
+                                    <span>Auto Deployment</span>
+                                </div>
+                                <div class="feature-item">
+                                    <span class="feature-icon">👥</span>
+                                    <span>Centralized Users</span>
+                                </div>
+                                <div class="feature-item">
+                                    <span class="feature-icon">📈</span>
+                                    <span>Network Analytics</span>
+                                </div>
+                            </div>
+                            <div class="project-tech">
+                                <span class="tech-tag">WordPress</span>
+                                <span class="tech-tag">PHP</span>
+                                <span class="tech-tag">MySQL</span>
+                                <span class="tech-tag">Docker</span>
+                                <span class="tech-tag">nginx</span>
+                                <span class="tech-tag">Redis</span>
+                            </div>
+                            <div class="project-actions">
+                                <button class="btn-primary project-btn" data-action="demo">
+                                    <span>🚀</span> Live Demo
+                                </button>
+                                <button class="btn-secondary project-btn" data-action="code">
+                                    <span>💻</span> View Code
+                                </button>
+                                <button class="btn-tertiary project-btn" data-action="details">
+                                    <span>📋</span> Full Details
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 3: Non-Profit CRM -->
+                    <div class="project-slide" data-category="nonprofit fullstack">
+                        <div class="project-visual">
+                            <div class="project-mockup">
+                                <div class="browser-frame">
+                                    <div class="browser-header">
+                                        <div class="browser-dots">
+                                            <span class="dot red"></span>
+                                            <span class="dot yellow"></span>
+                                            <span class="dot green"></span>
+                                        </div>
+                                        <div class="browser-url">nonprofit-crm.dev</div>
+                                        <div class="browser-actions">
+                                            <span class="action-btn">⟲</span>
+                                            <span class="action-btn">🔒</span>
+                                        </div>
+                                    </div>
+                                    <div class="browser-content">
+                                        <div class="mockup-crm">
+                                            <div class="crm-header">
+                                                <div class="crm-logo">💚 NonProfit CRM</div>
+                                                <div class="crm-nav">
+                                                    <span>Donors</span>
+                                                    <span>Campaigns</span>
+                                                    <span>Events</span>
+                                                    <span>Reports</span>
+                                                </div>
+                                            </div>
+                                            <div class="crm-dashboard">
+                                                <div class="dashboard-cards">
+                                                    <div class="dash-card">
+                                                        <h4>$125K</h4>
+                                                        <p>Total Raised</p>
+                                                    </div>
+                                                    <div class="dash-card">
+                                                        <h4>2,450</h4>
+                                                        <p>Active Donors</p>
+                                                    </div>
+                                                    <div class="dash-card">
+                                                        <h4>15</h4>
+                                                        <p>Active Campaigns</p>
+                                                    </div>
+                                                </div>
+                                                <div class="chart-area">
+                                                    <div class="chart-placeholder"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <div class="project-category">Non-Profit CRM</div>
+                            <h3 class="project-title">Donor Management System</h3>
+                            <p class="project-description">Comprehensive CRM platform designed specifically for non-profit organizations, featuring donor management, campaign tracking, event coordination, and detailed fundraising analytics.</p>
+                            <div class="project-features">
+                                <div class="feature-item">
+                                    <span class="feature-icon">💝</span>
+                                    <span>Donor Management</span>
+                                </div>
+                                <div class="feature-item">
+                                    <span class="feature-icon">📢</span>
+                                    <span>Campaign Tracking</span>
+                                </div>
+                                <div class="feature-item">
+                                    <span class="feature-icon">🎯</span>
+                                    <span>Event Coordination</span>
+                                </div>
+                                <div class="feature-item">
+                                    <span class="feature-icon">📊</span>
+                                    <span>Fundraising Analytics</span>
+                                </div>
+                            </div>
+                            <div class="project-tech">
+                                <span class="tech-tag">React</span>
+                                <span class="tech-tag">Laravel</span>
+                                <span class="tech-tag">MySQL</span>
+                                <span class="tech-tag">Chart.js</span>
+                                <span class="tech-tag">Stripe</span>
+                                <span class="tech-tag">AWS</span>
+                            </div>
+                            <div class="project-actions">
+                                <button class="btn-primary project-btn" data-action="demo">
+                                    <span>🚀</span> Live Demo
+                                </button>
+                                <button class="btn-secondary project-btn" data-action="code">
+                                    <span>💻</span> View Code
+                                </button>
+                                <button class="btn-tertiary project-btn" data-action="details">
+                                    <span>📋</span> Full Details
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Carousel Navigation -->
+                <div class="carousel-nav">
+                    <button class="nav-btn prev-btn">‹</button>
+                    <div class="carousel-dots">
+                        <span class="dot active" data-slide="0"></span>
+                        <span class="dot" data-slide="1"></span>
+                        <span class="dot" data-slide="2"></span>
+                    </div>
+                    <button class="nav-btn next-btn">›</button>
+                </div>
+            </div>
+            
+            <!-- Client Success Stories -->
+            <div class="client-projects">
+                <h3 class="subsection-title">Deployed Projects</h3>
+                <div class="client-grid">
+                    <a href="https://www.bornfree.org.uk" target="_blank" class="client-card" data-client="conservation">
+                        <div class="client-logo">🦁</div>
+                        <div class="client-info">
+                            <h4>Born Free Foundation</h4>
+                            <p>Wildlife conservation platform with donation system</p>
+                            <div class="client-stats">
+                                <span class="stat">50K+ Visitors</span>
+                                <span class="stat">£200K+ Raised</span>
+                            </div>
+                        </div>
+                        <div class="client-tech">
+                            <span class="mini-tech">WordPress</span>
+                            <span class="mini-tech">WooCommerce</span>
+                        </div>
+                    </a>
+                    
+                    <a href="https://youngwomenstrust.org" target="_blank" class="client-card" data-client="advocacy">
+                        <div class="client-logo">👩</div>
+                        <div class="client-info">
+                            <h4>Young Women's Trust</h4>
+                            <p>Advocacy platform with resource center</p>
+                            <div class="client-stats">
+                                <span class="stat">75K+ Users</span>
+                                <span class="stat">500+ Resources</span>
+                            </div>
+                        </div>
+                        <div class="client-tech">
+                            <span class="mini-tech">WordPress</span>
+                            <span class="mini-tech">ACF</span>
+                        </div>
+                    </a>
+                    
+                    <a href="https://st-margarets-hospice.org.uk" target="_blank" class="client-card" data-client="healthcare">
+                        <div class="client-logo">🏥</div>
+                        <div class="client-info">
+                            <h4>St Margaret's Hospice</h4>
+                            <p>Healthcare platform with appointment system</p>
+                            <div class="client-stats">
+                                <span class="stat">25K+ Patients</span>
+                                <span class="stat">99.9% Uptime</span>
+                            </div>
+                        </div>
+                        <div class="client-tech">
+                            <span class="mini-tech">WordPress</span>
+                            <span class="mini-tech">Custom API</span>
+                        </div>
+                    </a>
+                    
+                    <a href="https://actionforcarers.org.uk" target="_blank" class="client-card" data-client="support">
+                        <div class="client-logo">🤝</div>
+                        <div class="client-info">
+                            <h4>Action for Carers</h4>
+                            <p>Support network with community features</p>
+                            <div class="client-stats">
+                                <span class="stat">15K+ Members</span>
+                                <span class="stat">1K+ Support Groups</span>
+                            </div>
+                        </div>
+                        <div class="client-tech">
+                            <span class="mini-tech">WordPress</span>
+                            <span class="mini-tech">BuddyPress</span>
+                        </div>
+                    </a>
+                    
+                    <a href="https://talklistenchange.org.uk/" target="_blank" class="client-card" data-client="mental-health">
+                        <div class="client-logo">💬</div>
+                        <div class="client-info">
+                            <h4>Talk Listen Change</h4>
+                            <p>Mental health support platform with counseling services</p>
+                            <div class="client-stats">
+                                <span class="stat">10K+ Sessions</span>
+                                <span class="stat">95% Success Rate</span>
+                            </div>
+                        </div>
+                        <div class="client-tech">
+                            <span class="mini-tech">WordPress</span>
+                            <span class="mini-tech">Booking System</span>
+                        </div>
+                    </a>
+                    
+                    <a href="http://humandignitytrust.org/" target="_blank" class="client-card" data-client="human-rights">
+                        <div class="client-logo">⚖️</div>
+                        <div class="client-info">
+                            <h4>Human Dignity Trust</h4>
+                            <p>Human rights advocacy platform with legal resources</p>
+                            <div class="client-stats">
+                                <span class="stat">50+ Countries</span>
+                                <span class="stat">100+ Legal Cases</span>
+                            </div>
+                        </div>
+                        <div class="client-tech">
+                            <span class="mini-tech">WordPress</span>
+                            <span class="mini-tech">Custom CMS</span>
+                        </div>
+                    </a>
+                    
+                    <a href="https://demos.co.uk/" target="_blank" class="client-card" data-client="research">
+                        <div class="client-logo">📊</div>
+                        <div class="client-info">
+                            <h4>Demos Think Tank</h4>
+                            <p>Research platform with data visualization and reports</p>
+                            <div class="client-stats">
+                                <span class="stat">500+ Reports</span>
+                                <span class="stat">1M+ Downloads</span>
+                            </div>
+                        </div>
+                        <div class="client-tech">
+                            <span class="mini-tech">WordPress</span>
+                            <span class="mini-tech">Data Viz</span>
+                        </div>
+                    </a>
+                    
+                    <a href="https://dogstarfoundation.com/" target="_blank" class="client-card" data-client="animal-welfare">
+                        <div class="client-logo">🐕</div>
+                        <div class="client-info">
+                            <h4>Dogstar Foundation</h4>
+                            <p>Animal welfare platform with adoption and donation system</p>
+                            <div class="client-stats">
+                                <span class="stat">2K+ Adoptions</span>
+                                <span class="stat">£150K+ Raised</span>
+                            </div>
+                        </div>
+                        <div class="client-tech">
+                            <span class="mini-tech">WordPress</span>
+                            <span class="mini-tech">WooCommerce</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Project Statistics -->
+            <div class="project-stats">
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-number" data-count="50">0</div>
+                        <div class="stat-label">Projects Completed</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-count="25">0</div>
+                        <div class="stat-label">Happy Clients</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-count="500000">0</div>
+                        <div class="stat-label">Lines of Code</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-count="99">0</div>
+                        <div class="stat-label">% Success Rate</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+  <!-- Interactive Contact Section -->
+  <section id="contact" class="contact-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title contact-title">Let's Work Together</h2>
+        <div class="section-subtitle">Ready to bring your vision to life? Let's connect!</div>
+      </div>
+      
+      <div class="contact-content">
+        <!-- Contact Form -->
+        <div class="contact-form-container">
+          <div class="form-header">
+            <h3>Send Me a Message</h3>
+            <p>I'll get back to you within 24 hours</p>
+          </div>
           
-  
-      <a href="https://youngwomenstrust.org" target="_blank" class="project-card">
-        <img src="https://api.microlink.io/?url=https://youngwomenstrust.org&screenshot=true&embed=screenshot.url" alt="Young Women’s Trust" />
-        <div class="overlay">Young Women’s Trust</div>
-      </a>
-  
-      <a href="https://st-margarets-hospice.org.uk" target="_blank" class="project-card">
-        <img src="https://api.microlink.io/?url=https://st-margarets-hospice.org.uk&screenshot=true&embed=screenshot.url" alt="St Margaret’s Hospice" />
-        <div class="overlay">St Margaret’s Hospice</div>
-      </a>
-  
-      <a href="https://actionforcarers.org.uk" target="_blank" class="project-card">
-        <img src="https://api.microlink.io/?url=https://actionforcarers.org.uk&screenshot=true&embed=screenshot.url" alt="Action for Carers" />
-        <div class="overlay">Action for Carers</div>
-      </a>
-  
-      <a href="https://talklistenchange.org.uk/" target="_blank" class="project-card">
-        <img src="https://api.microlink.io/?url=https://talklistenchange.org.uk/&screenshot=true&embed=screenshot.url" alt="Talk Listen Change" />
-        <div class="overlay">Talk Listen Change</div>
-      </a>
+          <form id="contact-form" class="contact-form" action="https://formsubmit.co/myoluwatoyin@gmail.com" method="POST">
+            <!-- Hidden FormSubmit Configuration -->
+            <input type="hidden" name="_subject" value="New Portfolio Contact Message">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_template" value="table">
+            
+            <div class="form-group">
+              <div class="input-container">
+                <input type="text" name="name" id="name" required>
+                <label for="name">Your Name</label>
+                <div class="input-highlight"></div>
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <div class="input-container">
+                <input type="email" name="email" id="email" required>
+                <label for="email">Email Address</label>
+                <div class="input-highlight"></div>
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <div class="input-container">
+                <input type="text" name="company" id="company">
+                <label for="company">Company (Optional)</label>
+                <div class="input-highlight"></div>
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <div class="select-container">
+                <select name="project_type" id="project_type" required>
+                  <option value="">Select Project Type</option>
+                  <option value="website">Website Development</option>
+                  <option value="ecommerce">E-Commerce Platform</option>
+                  <option value="wordpress">WordPress Development</option>
+                  <option value="fullstack">Full-Stack Application</option>
+                  <option value="consulting">Technical Consulting</option>
+                  <option value="other">Other</option>
+                </select>
+                <div class="select-highlight"></div>
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <div class="textarea-container">
+                <textarea name="message" id="message" rows="5" required></textarea>
+                <label for="message">Project Details</label>
+                <div class="textarea-highlight"></div>
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <div class="budget-range">
+                <label class="budget-label">Project Budget Range</label>
+                <div class="budget-options">
+                  <input type="radio" name="budget" value="under-5k" id="budget1">
+                  <label for="budget1">Under $5K</label>
+                  
+                  <input type="radio" name="budget" value="5k-15k" id="budget2">
+                  <label for="budget2">$5K - $15K</label>
+                  
+                  <input type="radio" name="budget" value="15k-50k" id="budget3">
+                  <label for="budget3">$15K - $50K</label>
+                  
+                  <input type="radio" name="budget" value="50k-plus" id="budget4">
+                  <label for="budget4">$50K+</label>
+                </div>
+              </div>
+            </div>
+            
+            <button type="submit" class="submit-btn">
+              <span class="btn-text">Send Message</span>
+              <span class="btn-icon">🚀</span>
+              <div class="btn-loading">
+                <div class="loading-spinner"></div>
+              </div>
+            </button>
+            
+            <div id="form-status" class="form-status"></div>
+          </form>
+        </div>
+        
+        <!-- Contact Information -->
+        <div class="contact-info">
+          <div class="info-card">
+            <div class="info-icon">📧</div>
+            <h4>Email Me</h4>
+            <p>myoluwatoyin@gmail.com</p>
+            <a href="mailto:myoluwatoyin@gmail.com" class="info-link">Send Email</a>
+          </div>
+          
+          <div class="info-card">
+            <div class="info-icon">💬</div>
+            <h4>WhatsApp</h4>
+            <p>Quick response guaranteed</p>
+            <a href="https://wa.me/2348083964178" target="_blank" class="info-link">+234 808 396 4178</a>
+          </div>
+          
+          <div class="info-card">
+            <div class="info-icon">💼</div>
+            <h4>LinkedIn</h4>
+            <p>Professional network</p>
+            <a href="https://www.linkedin.com/in/emmanuel-boluwatife-54a50872/" target="_blank" class="info-link">Connect with me</a>
+          </div>
+          
+          <div class="info-card">
+            <div class="info-icon">🌍</div>
+            <h4>Location</h4>
+            <p>Available worldwide</p>
+            <span class="info-link">Remote only</span>
+          </div>
+          
+          <!-- Response Time Indicator -->
+          <div class="response-time">
+            <div class="response-indicator">
+              <div class="status-dot"></div>
+              <span>Usually responds within 4 hours</span>
+            </div>
+            <div class="availability">
+              <span class="timezone">🕐 GMT+1 (Nigeria)</span>
+            </div>
+          </div>
+        </div>
+      </div>
       
-  
-      <a href="http://humandignitytrust.org/" target="_blank" class="project-card">
-        <img src="https://api.microlink.io/?url=http://humandignitytrust.org/&screenshot=true&embed=screenshot.url" alt="Human Dignity Trust" />
-        <div class="overlay">Human Dignity Trust</div>
-      </a>
-  
-      <a href="https://demos.co.uk/" target="_blank" class="project-card">
-        <img src="https://api.microlink.io/?url=https://demos.co.uk/&screenshot=true&embed=screenshot.url" alt="DEMOS UK" />
-        <div class="overlay">DEMOS UK</div>
-      </a>
-      
-  
-      <a href="https://dogstarfoundation.com/" target="_blank" class="project-card">
-        <img src="https://api.microlink.io/?url=https://dogstarfoundation.com/&screenshot=true&embed=screenshot.url" alt="Dogstar Foundation" />
-        <div class="overlay">Dogstar Foundation</div>
-      </a>
-  
-    </div>
-  </section>
-  
-  
-  
-
-  <section id="contact" class="slide-in">
-    <h2>Work With Me</h2>
-    <form id="contact-form" action="https://formsubmit.co/ictsolutionsomega@gmail.com" method="POST">
-      <input type="text" name="name" placeholder="Your Name" required />
-      <input type="email" name="email" placeholder="Your Email" required />
-      <textarea name="message" placeholder="Your Message" required></textarea>
-      <button type="submit">Send Message</button>
-      <p id="form-status"></p>
-    </form>
-  
-    <div class="socials">
-      <p><strong>WhatsApp:</strong> <a href="https://wa.me/2348083964178" target="_blank">+234 808 396 4178</a></p>
-      <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/emmanuel-boluwatife-54a50872/" target="_blank">Visit Profile</a></p>
+      <!-- Contact CTA -->
+      <div class="contact-cta">
+        <h3>Ready to Start Your Project?</h3>
+        <p>Let's discuss how I can help bring your ideas to life with cutting-edge web solutions.</p>
+        <div class="cta-features">
+          <div class="feature">✅ Free Initial Consultation</div>
+          <div class="feature">✅ 24/7 Project Support</div>
+          <div class="feature">✅ Money-Back Guarantee</div>
+          <div class="feature">✅ Ongoing Maintenance</div>
+        </div>
+      </div>
     </div>
   </section>
   
@@ -227,8 +1732,12 @@
   <footer>
     <p>© 2025 Emmanuel Boluwatife. All Rights Reserved.</p>
   </footer>
+  <!-- Advanced Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
