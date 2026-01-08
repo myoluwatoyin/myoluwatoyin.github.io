@@ -1108,35 +1108,15 @@ const terminalAnimation = {
 /* ===== SCROLL ANIMATIONS ===== */
 const scrollAnimations = {
     init() {
-        // Animate sections on scroll
-        gsap.utils.toArray('section').forEach((section, i) => {
-            gsap.fromTo(section, 
-                {
-                    y: 100,
-                    opacity: 0
-                },
-                {
-                    scrollTrigger: {
-                        trigger: section,
-                        start: 'top 85%',
-                        end: 'top 20%',
-                        toggleActions: 'play none none reverse'
-                    },
-                    y: 0,
-                    opacity: 1,
-                    duration: 1.2,
-                    ease: 'power3.out'
-                }
-            );
-        });
+        // Scroll animations disabled - all elements visible immediately
         
-        // Initialize advanced about animations
+        // Initialize advanced about animations (click interactions only)
         this.initAdvancedAboutAnimations();
         
         // Animate tech orbit
         this.animateTechOrbit();
         
-        // Animate project cards
+        // Animate project cards (no scroll trigger)
         this.animateProjectCards();
         
         // Animate stats counter
@@ -1163,28 +1143,9 @@ const scrollAnimations = {
     initInteractiveTimeline() {
         const timelineItems = document.querySelectorAll('.timeline-item');
         
+        // No scroll animations - just click interactions
         timelineItems.forEach((item, index) => {
-            // Animate timeline items on scroll - much faster
-            gsap.fromTo(item, 
-                {
-                    x: -30,
-                    opacity: 0
-                },
-                {
-                    scrollTrigger: {
-                        trigger: item,
-                        start: 'top 90%',
-                        toggleActions: 'play none none reverse'
-                    },
-                    x: 0,
-                    opacity: 1,
-                    duration: 0.3,
-                    delay: index * 0.05,
-                    ease: 'power2.out'
-                }
-            );
-            
-            // Add click interaction
+            // Add click interaction only
             item.addEventListener('click', () => {
                 // Remove active class from all items
                 timelineItems.forEach(i => i.classList.remove('active'));
@@ -1220,27 +1181,7 @@ const scrollAnimations = {
         };
         
         techStars.forEach((star, index) => {
-            // Animate stars on scroll
-            gsap.fromTo(star, 
-                {
-                    scale: 0,
-                    rotation: -180,
-                    opacity: 0
-                },
-                {
-                    scrollTrigger: {
-                        trigger: '.tech-constellation',
-                        start: 'top 70%',
-                        toggleActions: 'play none none reverse'
-                    },
-                    scale: 1,
-                    rotation: 0,
-                    opacity: 1,
-                    duration: 0.8,
-                    delay: index * 0.1,
-                    ease: 'back.out(1.7)'
-                }
-            );
+            // No scroll animations - hover interactions only
             
             // Add hover interactions
             star.addEventListener('mouseenter', (e) => {
@@ -1337,27 +1278,7 @@ const scrollAnimations = {
         const stats = document.querySelectorAll('.interactive-stat');
         
         stats.forEach((stat, index) => {
-            // Animate stats on scroll
-            gsap.fromTo(stat, 
-                {
-                    y: 50,
-                    opacity: 0,
-                    scale: 0.8
-                },
-                {
-                    scrollTrigger: {
-                        trigger: stat,
-                        start: 'top 80%',
-                        toggleActions: 'play none none reverse'
-                    },
-                    y: 0,
-                    opacity: 1,
-                    scale: 1,
-                    duration: 0.8,
-                    delay: index * 0.1,
-                    ease: 'back.out(1.7)'
-                }
-            );
+            // No scroll animations - click interactions only
             
             // Add click interaction
             stat.addEventListener('click', () => {
@@ -1389,25 +1310,7 @@ const scrollAnimations = {
         const philosophyItems = document.querySelectorAll('.philosophy-item');
         
         philosophyItems.forEach((item, index) => {
-            // Animate philosophy items
-            gsap.fromTo(item, 
-                {
-                    x: -30,
-                    opacity: 0
-                },
-                {
-                    scrollTrigger: {
-                        trigger: item,
-                        start: 'top 85%',
-                        toggleActions: 'play none none reverse'
-                    },
-                    x: 0,
-                    opacity: 1,
-                    duration: 0.6,
-                    delay: index * 0.1,
-                    ease: 'power2.out'
-                }
-            );
+            // No scroll animations - hover interactions only
             
             // Add hover sound effect (visual feedback)
             item.addEventListener('mouseenter', () => {
@@ -1444,91 +1347,47 @@ const scrollAnimations = {
             });
         }
         
-        // Animate tech nodes only if they exist
-        const techNodes = document.querySelectorAll('.tech-node');
-        if (techNodes.length > 0) {
-            gsap.from('.tech-node', {
-                scale: 0,
-                opacity: 0,
-                duration: 0.6,
-                stagger: 0.1,
-                delay: 1,
-                ease: 'back.out(1.7)',
-                scrollTrigger: {
-                    trigger: '.tech-orbit',
-                    start: 'top 80%'
-                }
-            });
-        }
+        // Tech nodes - no scroll trigger
     },
     
     animateProjectCards() {
-        gsap.from('.project-card', {
-            y: 80,
-            opacity: 0,
-            duration: 1,
-            stagger: 0.2,
-            ease: 'power3.out',
-            scrollTrigger: {
-                trigger: '.projects-showcase',
-                start: 'top 80%'
-            }
-        });
-        
-        // Animate client cards
-        gsap.from('.client-card', {
-            scale: 0.8,
-            opacity: 0,
-            duration: 0.8,
-            stagger: 0.1,
-            ease: 'back.out(1.7)',
-            scrollTrigger: {
-                trigger: '.client-grid',
-                start: 'top 80%'
-            }
-        });
+        // No scroll animations - cards visible immediately
     },
     
     animateStatsCounter() {
         const stats = document.querySelectorAll('.stat-number');
         
+        // Animate counters immediately without scroll trigger
         stats.forEach(stat => {
             const target = parseInt(stat.dataset.count);
-            
-            ScrollTrigger.create({
-                trigger: stat,
-                start: 'top 80%',
-                onEnter: () => {
-                    gsap.to(stat, {
-                        innerHTML: target,
-                        duration: 2,
-                        snap: { innerHTML: 1 },
-                        ease: 'power2.out'
-                    });
-                }
-            });
+            if (target) {
+                gsap.to(stat, {
+                    innerHTML: target,
+                    duration: 2,
+                    snap: { innerHTML: 1 },
+                    ease: 'power2.out',
+                    delay: 0.5
+                });
+            }
         });
     },
     
     animateTechBars() {
         const techItems = document.querySelectorAll('.tech-item');
         
-        techItems.forEach(item => {
+        // Animate tech bars immediately without scroll trigger
+        techItems.forEach((item, index) => {
             const level = item.dataset.level;
             const progress = item.querySelector('.tech-progress');
             
-            ScrollTrigger.create({
-                trigger: item,
-                start: 'top 85%',
-                onEnter: () => {
-                    gsap.to(progress, {
-                        width: `${level}%`,
-                        duration: 1.5,
-                        ease: 'power2.out',
-                        delay: Math.random() * 0.3
-                    });
-                }
-            });
+            if (progress && level) {
+                gsap.to(progress, {
+                    width: `${level}%`,
+                    duration: 1.5,
+                    ease: 'power2.out',
+                    delay: 0.5 + (index * 0.1)
+                });
+            }
         });
     }
 };
